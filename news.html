@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyber News & Trends</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #2a2a3d;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .news-card {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      text-align: left;
+    }
+
+    .news-card h3 {
+      margin-top: 0;
+      color: #44c8f5;
+    }
+
+    .news-card p {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    .news-card small {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .back-btn {
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: #007bff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: 0.2s ease;
+    }
+
+    .btn-white:hover {
+      background-color: #e6e6e6;
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📰 Cyber News & Trends</h1>
+
+    <div class="news-grid">
+
+      <div class="news-card">
+        <h3>🔓 Critical OpenSSH Vulnerability Discovered</h3>
+        <p>Researchers found a new zero-day exploit targeting OpenSSH 9.2 – patch immediately!</p>
+        <small>June 2025 • Vulnerability</small>
+      </div>
+
+      <div class="news-card">
+        <h3>💣 Ransomware Attack Hits Major Hospital</h3>
+        <p>Patient data encrypted. Attackers demand ₹5 Cr in Bitcoin. Investigation underway.</p>
+        <small>June 2025 • Incident</small>
+      </div>
+
+      <div class="news-card">
+        <h3>📢 Microsoft Warns Against Widespread Phishing Campaign</h3>
+        <p>Fake emails with .zip malware are being sent to over 2 million users.</p>
+        <small>June 2025 • Advisory</small>
+      </div>
+
+      <div class="news-card">
+        <h3>🛡️ India Launches National Cybersecurity Framework</h3>
+        <p>The new initiative focuses on digital resilience, training & secure infrastructure.</p>
+        <small>May 2025 • Policy</small>
+      </div>
+
+      <div class="news-card">
+        <h3>⚖️ Hacker Convicted in ₹14 Crore Bank Fraud</h3>
+        <p>The attacker used SIM-swapping and phishing to siphon customer data.</p>
+        <small>May 2025 • Legal</small>
+      </div>
+
+      <div class="news-card">
+        <h3>📱 WhatsApp Bug Leaks Contact Info</h3>
+        <p>Privacy issue exposed numbers through preview API — now fixed in v2.25.1.</p>
+        <small>April 2025 • Privacy</small>
+      </div>
+
+    </div>
+
+    <div class="back-btn">
+      <a href="index.html" class="btn-white">🔙 Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel – Add Career</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    form {
+      text-align: left;
+      margin-top: 1rem;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    ul {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Panel: Add a New Career</h1>
+
+    <form id="careerForm">
+      <label>Career Title</label>
+      <input type="text" id="title" required />
+
+      <label>Salary</label>
+      <input type="text" id="salary" required />
+
+      <label>Skills</label>
+      <input type="text" id="skills" required />
+
+      <label>Certifications</label>
+      <input type="text" id="certs" required />
+
+      <label>Roadmap (comma separated)</label>
+      <textarea id="roadmap" required></textarea>
+
+      <button type="submit">Add Career</button>
+    </form>
+
+    <h3>📝 Added Careers</h3>
+    <ul id="careerList"></ul>
+  </div>
+
+  <script>
+    const form = document.getElementById("careerForm");
+    const list = document.getElementById("careerList");
+
+    form.onsubmit = (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value;
+      const salary = document.getElementById("salary").value;
+      const skills = document.getElementById("skills").value;
+      const certs = document.getElementById("certs").value;
+      const roadmap = document.getElementById("roadmap").value.split(",");
+
+      const item = document.createElement("li");
+      item.innerHTML = `
+        <strong>${title}</strong><br>
+        💰 Salary: ${salary}<br>
+        🛠️ Skills: ${skills}<br>
+        📜 Certifications: ${certs}<br>
+        🗺️ Roadmap:
+        <ul>${roadmap.map(step => `<li>${step.trim()}</li>`).join("")}</ul>
+      `;
+      list.appendChild(item);
+
+      form.reset();
+    };
+  </script>
+</body>
+</html>

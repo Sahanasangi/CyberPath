@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyber Career Info</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .career-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+
+    .card-box {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      color: white;
+      text-align: left;
+    }
+
+    .card-box h2 {
+      margin-top: 0;
+      color: #44c8f5;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 5px 10px;
+      font-weight: bold;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .list-tag {
+      background-color: rgba(255, 255, 255, 0.2);
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 6px 6px 0 0;
+      color: white;
+    }
+
+    .roadmap-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    .roadmap-list li {
+      background: rgba(0, 123, 255, 0.2);
+      border-left: 4px solid #007bff;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .back-btn {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: #007bff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: 0.2s ease;
+      display: inline-block;
+    }
+
+    .btn-white:hover {
+      background-color: #e6e6e6;
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="career-container">
+    <div class="card-box">
+      <h2 id="title">Career Title</h2>
+      <div><span class="badge" id="salary">💰 Salary</span></div>
+    </div>
+
+    <div class="card-box">
+      <h2>🛠️ Key Skills</h2>
+      <div id="skills" class="skills-tags"></div>
+    </div>
+
+    <div class="card-box">
+      <h2>🎓 Top Certifications</h2>
+      <div id="certs" class="skills-tags"></div>
+    </div>
+
+    <div class="card-box">
+      <h2>🗺️ Roadmap</h2>
+      <ul id="roadmap" class="roadmap-list"></ul>
+    </div>
+
+    <div class="back-btn">
+      <a href="index.html" class="btn-white">🔙 Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const careers = {
+  pentester: {
+    title: "Penetration Tester (Ethical Hacker)",
+    salary: "₹7L–₹15L/year",
+    skills: ["Linux", "Networking", "Burp Suite", "Python"],
+    certs: ["CEH", "OSCP", "PNPT"],
+    roadmap: [
+      "Learn networking & Linux basics",
+      "Practice on HackTheBox or TryHackMe",
+      "Take CEH or OSCP certification",
+      "Apply for internships or CTFs"
+    ]
+  },
+  soc: {
+    title: "SOC Analyst",
+    salary: "₹4L–₹10L/year",
+    skills: ["SIEM Tools", "Log Analysis", "Incident Handling"],
+    certs: ["Security+", "IBM Cyber Analyst"],
+    roadmap: [
+      "Understand incident response",
+      "Practice with Splunk or Wazuh",
+      "Get certified",
+      "Join SOC teams or internships"
+    ]
+  },
+  cloud: {
+    title: "Cloud Security Engineer",
+    salary: "₹10L–₹20L/year",
+    skills: ["AWS", "IAM", "Encryption", "Cloud Monitoring"],
+    certs: ["AWS Security Specialty", "Azure SC-900"],
+    roadmap: [
+      "Learn cloud basics and architecture",
+      "Master IAM & encryption techniques",
+      "Take cloud certs like AWS/Azure",
+      "Apply for cloud security roles"
+    ]
+  },
+  analyst: {
+    title: "Cybersecurity Analyst",
+    salary: "₹5L–₹11L/year",
+    skills: ["Risk Assessment", "Threat Intelligence", "SIEM", "Frameworks"],
+    certs: ["GSEC", "CISSP", "CompTIA CySA+"],
+    roadmap: [
+      "Understand threat models and frameworks",
+      "Practice risk analysis using real-world cases",
+      "Get certified",
+      "Join as security analyst"
+    ]
+  },
+  forensics: {
+    title: "Digital Forensics Expert",
+    salary: "₹8L–₹18L/year",
+    skills: ["Evidence Handling", "Malware Analysis", "Memory Dump", "Investigation Tools"],
+    certs: ["CHFI", "EnCE", "GCFA"],
+    roadmap: [
+      "Learn forensic methodology & legal process",
+      "Master tools like Autopsy, Volatility",
+      "Take forensic certifications",
+      "Work with law enforcement or firms"
+    ]
+  },
+  trainer: {
+    title: "Cybersecurity Trainer",
+    salary: "₹5L–₹12L/year",
+    skills: ["Teaching", "Cyber Concepts", "Presentation", "Curriculum Design"],
+    certs: ["CTT+", "Train the Trainer", "Security+"],
+    roadmap: [
+      "Gain practical cybersecurity experience",
+      "Develop teaching and public speaking skills",
+      "Get teaching certifications",
+      "Create training programs"
+    ]
+  },
+  law: {
+    title: "Cyber Law Specialist",
+    salary: "₹6L–₹14L/year",
+    skills: ["Digital Privacy", "IT Act", "GDPR", "Legal Drafting"],
+    certs: ["LLB (Cyber Law)", "PGDCL", "Cyber Law Diploma"],
+    roadmap: [
+      "Study cyber laws & IT regulations",
+      "Pursue diploma or LLB in cyber law",
+      "Intern at legal/cyber firms",
+      "Advise companies on data compliance"
+    ]
+  },
+  bugbounty: {
+    title: "Bug Bounty Hunter",
+    salary: "₹0 – ₹∞ (Reward-based)",
+    skills: ["Web Hacking", "OWASP", "Recon", "Responsible Disclosure"],
+    certs: ["Self-Taught", "CEH/OSCP (Optional)"],
+    roadmap: [
+      "Master OWASP Top 10 vulnerabilities",
+      "Join HackerOne, Bugcrowd, Intigriti",
+      "Submit valid reports and earn bounties",
+      "Document findings and grow reputation"
+    ]
+  }
+};
+
+      
+      // Add more roles like 'cloud', 'law', 'bugbounty', etc.
+    ;
+
+    const params = new URLSearchParams(window.location.search);
+    const role = params.get("role");
+
+    if (role && careers[role]) {
+      const data = careers[role];
+      document.getElementById("title").innerText = data.title;
+      document.getElementById("salary").innerText = "💰 " + data.salary;
+
+      const skills = document.getElementById("skills");
+      data.skills.forEach(skill => {
+        const tag = document.createElement("span");
+        tag.className = "list-tag";
+        tag.innerText = skill;
+        skills.appendChild(tag);
+      });
+
+      const certs = document.getElementById("certs");
+      data.certs.forEach(cert => {
+        const tag = document.createElement("span");
+        tag.className = "list-tag";
+        tag.innerText = cert;
+        certs.appendChild(tag);
+      });
+
+      const roadmap = document.getElementById("roadmap");
+      data.roadmap.forEach(step => {
+        const li = document.createElement("li");
+        li.innerText = step;
+        roadmap.appendChild(li);
+      });
+    }
+  </script>
+  <script src="script.js" defer></script>
+
+</body>
+</html>
+

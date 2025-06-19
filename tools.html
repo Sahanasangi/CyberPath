@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Tools</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #2a2a3d;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tool-card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1rem;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      text-align: left;
+    }
+
+    .tool-card h3 {
+      margin-top: 0;
+      color: #44c8f5;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #007bff;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      color: white;
+    }
+
+    .tool-card a {
+      color: #ffcc66;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: #007bff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: 0.2s ease;
+    }
+
+    .btn-white:hover {
+      background-color: #e6e6e6;
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛠️ Cybersecurity Tools</h1>
+
+    <div class="tools-grid">
+      <div class="tool-card">
+        <h3>Burp Suite</h3>
+        <p>Web vulnerability scanner used by ethical hackers.</p>
+        <div class="tag">Red Team</div>
+      </div>
+
+      <div class="tool-card">
+        <h3>Wireshark</h3>
+        <p>Packet analysis and sniffing for network monitoring.</p>
+        <div class="tag">Blue Team</div>
+      </div>
+
+      <div class="tool-card">
+        <h3>Splunk</h3>
+        <p>SIEM tool for analyzing security logs and alerts.</p>
+        <div class="tag">SOC / Blue Team</div>
+      </div>
+
+      <div class="tool-card">
+        <h3>Autopsy</h3>
+        <p>Digital forensics tool for examining hard drives and evidence.</p>
+        <div class="tag">Forensics</div>
+      </div>
+
+      <div class="tool-card">
+        <h3>Nmap</h3>
+        <p>Network mapper used for scanning and recon.</p>
+        <div class="tag">Red Team</div>
+      </div>
+
+      <div class="tool-card">
+        <h3>AWS IAM</h3>
+        <p>Cloud Identity & Access Management for secure cloud control.</p>
+        <div class="tag">Cloud / All</div>
+      </div>
+    </div>
+
+    <div class="back-btn">
+      <a href="index.html" class="btn-white">🔙 Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

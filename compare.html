@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cybersecurity Careers Comparison</title><head>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2A2A3D;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.9); /* light table bg */
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      color: black; /* text is BLACK */
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #ccc;
+      color: black;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #e8e8e8;
+    }
+
+    tr:hover {
+      background-color: #d0e1ff;
+      color: black;
+    }
+
+    @media screen and (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead tr {
+        display: none;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+      }
+
+      td::before {
+        position: absolute;
+        top: 12px;
+        left: 16px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #555;
+        content: attr(data-label);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cybersecurity Careers Comparison</h1>
+    <p>See how different roles stack up side by side:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Average Salary</th>
+          <th>Key Skills</th>
+          <th>Certifications</th>
+          <th>Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Penetration Tester</td>
+          <td>₹7L–₹15L</td>
+          <td>Linux, Networking, Python</td>
+          <td>CEH, OSCP</td>
+          <td>High 🧠</td>
+        </tr>
+        <tr>
+          <td>SOC Analyst</td>
+          <td>₹4L–₹10L</td>
+          <td>SIEM, Logs, Threat Response</td>
+          <td>Security+, IBM</td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Cloud Security Engineer</td>
+          <td>₹10L–₹20L</td>
+          <td>AWS, IAM, Encryption</td>
+          <td>AWS, Azure SC-900</td>
+          <td>High 🧠</td>
+        </tr>
+        <tr>
+          <td>Cybersecurity Analyst</td>
+          <td>₹5L–₹11L</td>
+          <td>Risk Analysis, Frameworks</td>
+          <td>GSEC, CISSP</td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Digital Forensics</td>
+          <td>₹8L–₹18L</td>
+          <td>Recovery, Malware Analysis</td>
+          <td>CHFI, EnCE</td>
+          <td>High 🧠</td>
+        </tr>
+        <tr>
+          <td>Cybersecurity Trainer</td>
+          <td>₹5L–₹12L</td>
+          <td>Teaching, Curriculum</td>
+          <td>CTT+, Train the Trainer</td>
+          <td>Low–Medium</td>
+        </tr>
+        <tr>
+          <td>Cyber Law Specialist</td>
+          <td>₹6L–₹14L</td>
+          <td>Legal, Data Privacy</td>
+          <td>LLB Cyber, PGDCL</td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td>Bug Bounty Hunter</td>
+          <td>₹0 – ₹∞</td>
+          <td>Recon, Reporting, Web Hacking</td>
+          <td>CEH/OSCP (optional)</td>
+          <td>Extreme 💀</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   
+
+ <div class="back-btn">
+  <a href="index.html" class="btn-white">🔙 Back to Home</a>
+</div>
+
+
+</body>
+</html>

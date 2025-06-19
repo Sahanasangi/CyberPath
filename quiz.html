@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyber Career Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .question {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .question h3 {
+      margin-top: 0;
+      color: #44c8f5;
+    }
+
+    .question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    #result {
+      background: rgba(0, 123, 255, 0.2);
+      padding: 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+      display: none;
+      color: white;
+    }
+
+    .btn {
+      background: white;
+      color: #007bff;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #e6e6e6;
+      color: #0056b3;
+    }
+
+    .back-btn {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>🔎 Cyber Career Quiz</h1>
+    <p>Answer a few questions to see which cybersecurity role suits you best!</p>
+
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. What excites you the most?</h3>
+        <label><input type="radio" name="q1" value="pentester"> Hacking into systems 🔓</label>
+        <label><input type="radio" name="q1" value="soc"> Watching & responding to alerts ⚠️</label>
+        <label><input type="radio" name="q1" value="cloud"> Securing cloud platforms ☁️</label>
+      </div>
+
+      <div class="question">
+        <h3>2. Which tool sounds coolest to you?</h3>
+        <label><input type="radio" name="q2" value="pentester"> Burp Suite</label>
+        <label><input type="radio" name="q2" value="soc"> Splunk</label>
+        <label><input type="radio" name="q2" value="cloud"> AWS IAM</label>
+      </div>
+
+      <div class="question">
+        <h3>3. What's your ideal vibe?</h3>
+        <label><input type="radio" name="q3" value="pentester"> Offensive, break stuff 💣</label>
+        <label><input type="radio" name="q3" value="soc"> Defensive, protect systems 🛡️</label>
+        <label><input type="radio" name="q3" value="cloud"> Builder, secure infrastructure 🏗️</label>
+      </div>
+
+      <button type="submit" class="btn">🎯 Get My Result</button>
+    </form>
+
+    <div id="result"></div>
+
+    <div class="back-btn">
+      <a href="index.html" class="btn">🔙 Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("quizForm");
+    const result = document.getElementById("result");
+
+    form.onsubmit = function(e) {
+      e.preventDefault();
+
+      let scores = { pentester: 0, soc: 0, cloud: 0 };
+      const formData = new FormData(form);
+      for (let [key, value] of formData.entries()) {
+        scores[value]++;
+      }
+
+      let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+      let roleText = {
+        pentester: "👾 You're a Penetration Tester! Time to break things (legally)!",
+        soc: "🛡️ You're a SOC Analyst! Defender of the network!",
+        cloud: "☁️ You're a Cloud Security Engineer! Build and protect in the sky!"
+      };
+
+      result.innerText = roleText[winner];
+      result.style.display = "block";
+    };
+  </script>
+</body>
+</html>
