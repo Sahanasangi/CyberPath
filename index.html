@@ -17,6 +17,26 @@
       <a href="tools.html">Tools</a>
       <a href="news.html">Cyber News</a>
 
+<!-- logout button -->
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+<script>
+  function logout() {
+    // Clear login info
+    localStorage.removeItem("cyberUser");
+    localStorage.removeItem("cyberPass");
+    // Go back to login page
+    window.location.href = "login.html";
+  }
+</script>
+
+<script>
+  // Redirect to login if user is not authenticated
+  if (!localStorage.getItem("cyberUser")) {
+    window.location.href = "login.html";
+  }
+</script>
+
 
 
     </div>
@@ -158,3 +178,8 @@
   </div>
 </body>
 </html>
+
+
+
+
+
